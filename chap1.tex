@@ -12,7 +12,7 @@ The magnetic flux density, $\underline{B}$, measured in T within some material a
 
 \noindent where $\mu_0$ is the permeability of free space and $\underline{M}$ is the magnetisation of the material. Magnetisation is defined as the magnetic moment per unit volume.
 
-\noindent If the magnetisation of the material of the material is dependent on the external magnetic field such that:
+\noindent If the magnetisation of the material is dependent on the external magnetic field such that:
 
 \begin{equation}
     \underline{M} = \chi \underline{H},
@@ -27,13 +27,13 @@ The magnetic flux density, $\underline{B}$, measured in T within some material a
                   = \mu_0 \mu_r \underline{H}, \label{MagneticFluxDensityRelative}
 \end{eqnarray}
 
-\noindent where $\mu_r$ is the relative permeability and defined as $\mu_r = 1 + \chi$. Eq~\ref{LinearMagnetisationRelation} is only valid in the case where the magnetisation of the material is linear in response to the application of an external magnetic field. This relation is not true for non-linear responses.
+\noindent where $\mu_r$ is the relative permeability. Eq~\ref{LinearMagnetisationRelation} is only valid in the case where the magnetisation of the material is linear in response to the application of an external magnetic field. This relation is not true for non-linear responses.
 
-\noindent The value of $\chi$ can be used to classify magnetic materials. If $\chi < 0$, then the material is a diamagnet. Typically diamagnetic materials have $\chi \sim -10^{-5}$. Paramagnetic materials have $\chi > 0$ and $\sim 10^{-3}$. Ferromagnets have $\chi \gg 1$ with $\underline{M} \neq 0$, whilst anti-ferromagnets have $\chi > 0$ with $\underline{M} = 0$.
+\noindent The value of $\chi$ can be used to classify magnetic materials. If $\chi < 0$, then the material is a diamagnet. Typically diamagnetic materials have $\chi \sim -10^{-5}$, although superconductors have $\chi = -1$ under certain conditions. Paramagnetic materials have $\chi > 0$ and $\sim 10^{-3}$. Ferromagnets have $\chi \gg 1$ with $\underline{M} \neq 0$, whilst anti-ferromagnets have $\chi > 0$ with $\underline{M} = 0$.
 
-\noindent Materials that have full electron shells, such that there is no net electron spin moment, are purely diamagnetic. Diamagnetism is always present when subject to an external magnetic field but its effect is very samll when compared to paramagnetic contributions. In comparison, materials are only paramagnetic if their atoms have partially filled shells.
+\noindent Materials that have full electron shells, such that there is no net electronic magnetic moment, are purely diamagnetic. Diamagnetism is always present when the material is subject to an external magnetic field but its effect is very small when compared to paramagnetic contributions. In comparison, materials are only paramagnetic if their atoms have partially filled shells.
 
-\noindent The fundamental object in magnetism is the magnetic which is defined from classical electrodynamics as:
+\noindent The fundamental object in magnetism is the magnetic moment which is defined from classical electrodynamics as:
 
 \begin{equation}
     \underline{\mu} = \int d \underline{\mu} = I \int d\underline{S},
@@ -49,16 +49,16 @@ The magnetic flux density, $\underline{B}$, measured in T within some material a
     \label{MagneticMomentAngularMomentumRelationship},
 \end{equation}
 
-\noindent where $\gamma$ is the gyromagnetic ratio and $\underline{L}$ is the angular momentum. This relationship can be experimentally verified by the Einstein-de Haas effect or the Barnett effect. These rely on the conservation of angular momentum.
+\noindent where $\gamma$ is the gyromagnetic ratio and $\underline{L}$ is the angular momentum. This relationship can be experimentally verified by the Einstein-de Haas effect or the Barnett effect, which rely on the conservation of angular momentum.
 
-\noindent The energy of a magnetic moment, $E$ is given by:
+\noindent The energy of a magnetic moment, $E$, is given by:
 
 \begin{equation}
-    E = - \mu \cdot \underline{B},
+    E = - \underline{\mu} \cdot \underline{B},
     \label{EnergyMagneticMoment}
 \end{equation}
 
-\noindent which is minimised when the $\mu$ is parallel to $\underline{B}$. From this we can see that magnitude of the magnetisation of a material has the property that:
+\noindent which is minimised when $\underline{\mu}$ is parallel to $\underline{B}$. From this we can see that the magnitude of the magnetisation of a material has the property that:
 
 \begin{equation}
     M ~ \propto ~ \frac{\partial E}{\partial B}.
@@ -81,18 +81,18 @@ The magnetic flux density, $\underline{B}$, measured in T within some material a
 
 \noindent which shows that $\underline{\mu}$ precesses around $\underline{B}$. The frequency associated with this precession is known as the Larmor frequency.
 
-\noindent The Bohr magneton, $\underline{\mu}_B$, is defined as:
+\noindent The Bohr magneton, $\mu_B$, is defined as:
 
 \begin{equation}
-    \underline{\mu}_B = \frac{-e \hbar}{2m_e} \simeq 9.274 \times 10^{-24}
+    \mu_B = \frac{-e \hbar}{2m_e} \simeq 9.274 \times 10^{-24},
     \label{BohrMagneton}
 \end{equation}
 
 \noindent and represents a fundamental unit. It can be derived by considering an electron, in the ground state of an atom, forming a current loop of radius $r$ with area $\pi r^2$ and angular momentum of $L = m_e v r = \hbar$.
 
-\noindent So far we have only considered isolated magnetic moments. We now briefly consider the effect of crystal electric fields, i.e the electric fields present in a material due to the ions and surrounding electron orbitals, on electronic configurations and how this leads to orbital quenching.
+\noindent So far we have only considered isolated magnetic moments. We now briefly consider the effect of crystal electric fields, i.e the electric fields present in a material due to the surrounding ions and electrons, on electronic configurations and how this leads to orbital quenching.
 
-\noindent For an isolated atom, the electronic s, p, d, f, ... orbitals have distinct energies but each contain a subset of orbitals that are degenerate. For example E($p_x$) = E($p_y$) = E($p_z$). However, this won't be the case when including the effect of the crystal electric field. The change in energy of each sub-orbital depends on the crystal structure and the overlap between sub-orbitals. This leads to the effect or orbital quenching, since the energy of these sub-orbitals are no longer degenerate and so, in the case of full quenching, $\langle L \rangle = 0$. This means experimental results of the effective magnetic moment if 3d electrons fit 2$\sqrt{S(S + 1)}$ instead of $g_L\sqrt{J(J + 1)}$. The experimental results only match $g_L\sqrt{J(J + 1)}$ when $L = 0$, due to how electron sub-orbitals are filled according to Hund's rules.
+\noindent For an isolated atom, the electronic s, p, d, f, ... orbitals each possess sub-orbitals that are degenerate. For example E($p_x$) = E($p_y$) = E($p_z$). However, this won't be the case when including the effect of the crystal electric field due to the coulombic attraction and repulsion occurring. The resulting energy change for each sub-orbital depends on the surrounding crystal structure and the corresponding overlap between sub-orbitals. This leads to the effect of orbital quenching. This is because the energy of these sub-orbitals are no longer degenerate and so, in the case of full quenching, $\langle L \rangle = 0$. This means experimental results of the effective magnetic moment of 3d electrons fit 2$\sqrt{S(S + 1)}$ better than $g_L\sqrt{J(J + 1)}$. The experimental results only match $g_L\sqrt{J(J + 1)}$ when $L = 0$, due to how electron sub-orbitals are filled according to Hund's rules.
 
 \section{Magnetic Interactions}
 
