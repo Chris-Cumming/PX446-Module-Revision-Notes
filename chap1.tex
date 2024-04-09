@@ -94,7 +94,148 @@ The magnetic flux density, $\underline{B}$, measured in T within some material a
 
 \noindent For an isolated atom, the electronic s, p, d, f, ... orbitals each possess sub-orbitals that are degenerate. For example E($p_x$) = E($p_y$) = E($p_z$). However, this won't be the case when including the effect of the crystal electric field due to the coulombic attraction and repulsion occurring. The resulting energy change for each sub-orbital depends on the surrounding crystal structure and the corresponding overlap between sub-orbitals. This leads to the effect of orbital quenching. This is because the energy of these sub-orbitals are no longer degenerate and so, in the case of full quenching, $\langle L \rangle = 0$. This means experimental results of the effective magnetic moment of 3d electrons fit 2$\sqrt{S(S + 1)}$ better than $g_L\sqrt{J(J + 1)}$. The experimental results only match $g_L\sqrt{J(J + 1)}$ when $L = 0$, due to how electron sub-orbitals are filled according to Hund's rules.
 
+\subsection{Key Results}
+
 \section{Magnetic Interactions}
+
+Ferromagnetic materials have a critical temperature, $T_C$, known as the Curie temperature. This represents the temperature at which the material undergoes a phase transition. The magnetic order observed for $T < T_C$ was originally thought to occur due to the magnetic dipolar interaction, which is given by:
+
+\begin{equation}
+    E = \frac{\mu_0}{4\pi r^3}[\underline{\mu}_1 \cdot \underline{\mu}_2 - \frac{3}{r^2}(\underline{\mu}_1 \cdot \underline{r})(\underline{\mu}_2 \cdot \underline{r})].
+    \label{DipolarInteraction}
+\end{equation}
+
+\noindent However, this predicts critical temperatures much lower than those observed experimentally. So there must be another mechanism allowing long range magnetic order to occur. This is the exchange interaction, which relies on electrostatic interactions and the relative spin of the interacting fermions through the Pauli Exclusion Principle (PEP).
+
+\noindent To see how this interaction arises we consider a system of two electrons with spins $\underline{S}_a$ and $\underline{S}_b$. Since electrons are fermions their overall wavefunctions must be anti-symmetric. The overall wavefunction is a product of a spatial and spin part:
+
+\begin{equation}
+    \Psi = \psi(\underline{r}) \chi(S),
+    \label{OverallWavefunction}
+\end{equation}
+
+\noindent so either $\psi(\underline{r}) = \psi(-\underline{r})$ and $\chi(S) = - \chi(S)$ or $\psi(\underline{r}) = -\psi(-\underline{r})$ and $\chi(S) =  \chi(S)$.
+
+\noindent The total vector spin of our two electron system is:
+
+\begin{equation}
+    \underline{S}_{tot} = \underline{S}_a + \underline{S}_b,
+    \label{TotalVectorSpin}
+\end{equation}
+
+\noindent which means that:
+
+\begin{equation}
+    |\underline{S}_{tot}|^2 = |\underline{S}_a|^2 + |\underline{S}_b|^2 + 2 \underline{S}_a \cdot \underline{S}_b = s(s + 1),
+    \label{TotalSpin}
+\end{equation}
+
+\noindent where we have let $\hbar = 1$. For the combined system we may either have a singlet state, $s = 0$, or a triplet state, $s = 1$, which means that $|\underline{S}_{tot}|^2 = 0$ or $|\underline{S}_{tot}|^2 = 2$, using Eq~\ref{TotalSpin}. From this we may calculate $\underline{S}_a \cdot \underline{S}_b$ in Eq~\ref{TotalSpin} by recalling that $|\underline{S}_a|^2 = |\underline{S}_b|^2$. As a result of this for $s = 0$, $\underline{S}_a \cdot \underline{S}_b = \frac{-3}{4}$ and for $s = 1$, $\underline{S}_a \cdot \underline{S}_b = \frac{1}{4}$.
+
+\noindent The possible eigenstate basis of the system is formed from the projection of the two spins along the z axis, i.e: $\ket{\uparrow \uparrow}$, $\ket{\downarrow \downarrow}$, $\ket{\uparrow \downarrow}$ and $\ket{\downarrow \uparrow}$. However, by themselves the last two are not symmetric or anti-symmetric as we require them so we form linear combinations to satisfy this requirement. In conclusion:
+
+\begin{center}
+\begin{tabular}{||c c c c c c||} 
+ \hline
+ Eigenstate & $m_s$ & $s$ & $\underline{S}_a \cdot \underline{S}_b$ & $\chi(S)$ & $\psi(\underline{r})$ \\ [0.5ex] 
+ \hline\hline
+ $\ket{\uparrow \uparrow}$ & 1 & 1 & $\frac{1}{4}$ & Symmetric & Anti-symmetric \\ 
+ \hline
+ $\frac{\ket{\uparrow \downarrow} + \ket{\downarrow \uparrow}}{\sqrt{2}}$ & 0 & 1 & $\frac{1}{4}$ & Symmetric & Anti-symmetric \\
+ \hline
+ $\ket{\downarrow \downarrow}$ & -1 & 1 & $\frac{1}{4}$ & Symmetric & Anti-symmetric \\
+ \hline
+ $\frac{\ket{\uparrow \downarrow} - \ket{\downarrow \uparrow}}{\sqrt{2}}$ & 0 & 0 & $\frac{-3}{4}$ & Anti-symmetric & Symmetric \\
+ \hline
+\end{tabular}
+\end{center}
+
+\noindent The first three eigenstates correspond to the triplet state and have spin wavefunction, $\chi_T$, whilst the final eigenstate corresponds to the singlet state and has spin wavefunction, $\chi_S$.
+
+\noindent From the table we can see that Eq~\ref{OverallWavefunction} has the following form for singlet states:
+
+\begin{equation}
+    \Psi_S = \frac{1}{\sqrt{2}} [\psi_a(\underline{r}_1) \psi_b(\underline{r}_2) + \psi_a(\underline{r}_2) \psi_b(\underline{r}_1)] \chi_S,
+    \label{SingletStateWavefunction}
+\end{equation}
+
+\noindent and for the triplet state:
+
+\begin{equation}
+    \Psi_T = \frac{1}{\sqrt{2}} [\psi_a(\underline{r}_1) \psi_b(\underline{r}_2) - \psi_a(\underline{r}_2) \psi_b(\underline{r}_1)] \chi_T.
+    \label{TripletStateWavefunction}
+\end{equation}
+
+\noindent The corresponding energies of these states are $E_S = \bra{\Psi_S} \Hat{H} \ket{\Psi_S}$ and $E_T = \bra{\Psi_T} \Hat{H} \ket{\Psi_T}$ respectively. This means we can now define the exchange constant (or integral) as:
+
+\begin{equation}
+    J = \frac{E_S - E_T}{2},
+    \label{ExchangeConstant}
+\end{equation}
+
+\noindent which is used in a two body Hamiltonian:
+
+\begin{equation}
+    H = -2J\underline{S}_a \cdot \underline{S}_b.
+    \label{TwoBodyHamiltonian}
+\end{equation}
+
+\noindent This can then be generalised to a many body system with the Heisenberg Hamiltonian:
+
+\begin{equation}
+    H = -\Sigma_{i,j} J_{ij} \underline{S}_a \cdot \underline{S}_b = -2 \Sigma_{i>j} J_{ij} \underline{S}_a \cdot \underline{S}_b
+    \label{HeisenbergHamiltonian},
+\end{equation}
+
+\noindent where if $J>0$, the triplet state is favoured and the material will be ferromagnetic but if $J<0$ then the singlet state is favoured and the material will be anti-ferromagnetic.
+
+\noindent If the electrons are on the same atom $J>0$, meaning they form an anti-symmetric spatial state which minimises the coulombic repulsion between them by the keeping the electrons apart. This is consistent with Hund's 1st rule.
+
+\noindent However if the two electrons are on neighbouring atoms we now consider molecular instead of atomic orbitals, since the energy of an electron in 1D potential well scales as $L^{-2}$, where $L$ is the size of the well. These molecular orbitals are either bonding (spatially symmetric) or anti-bonding (spatially anti-symmetric). In this case, because the anti-bonding orbital isn't the lowest energy state, we must have $J<0$ and so singlet states are preferred. This exchange interaction is between electrons on neighbouring magnetic atoms and so is known as direct exchange. This is physically rare.
+
+\noindent We now consider some examples of indirect exchange which is more common.
+The first is superexchange which occurs in ionic solids such as MnO: Mn$^{2+}$O$^{2-}$. Here the exchange interaction is mediated between the magnetic Mn$^{2+}$ ions by the non-magnetic O$^{2-}$ ion which separates the magnetic ions. By considering the excited states of the spins on the ions of such a system we find that indirect exchange results in anti-ferromagnetism.
+In metals, the exchange interaction between the magnetic ions is mediated by the conduction electrons. This is known as the RKKY interaction:
+
+\begin{equation}
+    J_{RKKY}(r) \propto \frac{cos(2k_fr}{r^3},
+    \label{IndirectInteractionRKKY}
+\end{equation}
+
+\noindent and describes magnetic order in metals with no direct exchange, superexchange or band magnetism. The Stoner model explains band magnetims which also occurs in metals.
+Another example of indirect exchange is double exchange. This is a ferromagnetic interaction which occurs when magnetic ions within a material have mixed valency, such as Mn$^{3+}$ and Mn$^{4+}$. In this case t$_{2g}$ and e$_g$ orbitals are considered and we find that anti-ferromagnetic interactions violates Hund's 1st rule and leads to higher energy configurations than ferromagnetic behaviour.
+
+\noindent So far all these interactions have been isotropic, that is they don't care about the absolute orientation of magnetic moments only the relative orientation of interacting moments. An example  of an aniostropic interaction is the DM interaction, which has the Hamiltonian:
+
+\begin{equation}
+    H_{DM} = \underline{D} \cdot \underline{S}_a \times \underline{S}_b.
+    \label{AnisotropicInteractionDM}
+\end{equation}
+
+\noindent In this case, the energy of the system is minimised when magnetic moments are perpendicular. If this interaction is present in an anti-ferromagnetic system then the system becomes weakly ferromagnetic.
+
+\noindent Most materials possess some magnetic anisotropy. This means it is energetically favourable for the material to be magnetised along a particular direction, which normally arises due to the crystal structure of the material. This means:
+
+\begin{equation}
+    E \propto \Sigma_i (S^Z_i)^2,
+    \label{MagneticAnisotropyEnergy}
+\end{equation}
+
+\noindent where $D$ represents some characteristic property of the system providing anisotropy. If $D < 0$ then we have whats known as the easy axis along the z axis, whilst if $D > 0$ then the easy plane corresponds to the xy plane. This concept leads to the Ising Hamiltonian:
+
+\begin{equation}
+    H = -\Sigma_{i,j} J_{ij} S^Z_i S^Z_j,
+    \label{IsingHamiltonian}
+\end{equation}
+
+\noindent and the XY hamiltonian:
+
+\begin{equation}
+    H = -\Sigma_{i,j} J_{ij} (S^X_i S^X_j + S^Y_i S^Y_j),
+    \label{HamiltonianXY}
+\end{equation}
+
+\noindent respectively.
 
 \section{Magnetic Measurement Techniques}
 
