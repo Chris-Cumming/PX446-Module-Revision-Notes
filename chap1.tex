@@ -198,7 +198,7 @@ The first is superexchange which occurs in ionic solids such as MnO: Mn$^{2+}$O$
 In metals, the exchange interaction between the magnetic ions is mediated by the conduction electrons. This is known as the RKKY interaction:
 
 \begin{equation}
-    J_{RKKY}(r) \propto \frac{cos(2k_fr}{r^3},
+    J_{RKKY}(r) \propto \frac{cos(2k_fr)}{r^3},
     \label{IndirectInteractionRKKY}
 \end{equation}
 
@@ -239,9 +239,329 @@ Another example of indirect exchange is double exchange. This is a ferromagnetic
 
 \section{Magnetic Measurement Techniques}
 
-\section{Ferromagnets and Magnetic Domains}
+NEED IMAGES FOR EXPERIMENTAL SETUPS AND RESULTS.
 
-\section{Paramagnets}
+\subsection{Magnetic Resonance}
+
+The first technique is that of magnetic resonance. The experimental setup is shown below:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent Normally the frequency of microwave, $\nu$, is kept constant whilst the magnetic field is sweeped. The absorption of microwaves by the sample is determined by monitoring the Q factor of the cavity. In such magnetic dipole transitions the selection rules are $\Delta m_J = \pm1$ and $\Delta m_I = 0$.
+
+\noindent For a $J = 1$ ion, such as Ni$^{2+}$m with no crystal field splitting we observe:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent However, with crystal field splitting:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent This allows us to determine the crystal field splitting, $\Delta$. A more complete picture, for Ce$^{3+}$, is shown below:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsection{Magnetic Susceptibility Measurements}
+
+We now consider two techniques that allow magnetic susceptibility measurements. The first is that of a torque magnetometer, as shown below:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent A torque, $\underline{\tau} = \underline{\mu} \times \underline{B}$, is produced on the sample using the solenoids which causes the wire to rotate. This rotation is detected by the photodetectors which then supply a current to the compensation coil which produces an opposing torque using the permanent magnets of known strength. The current is varied in order to compensate for the torque of the sample. These magnetometers are very sensitive but don't give the absolute value for the torque/magnetisation.
+
+\noindent These can be measured exactly using extraction magnetometers:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent Here a magnetic material oscillates between a coil of wire, which through Lenz's law produces a measurable voltage:
+
+\begin{equation}
+    \epsilon = - \frac{d \Phi}{dt}
+    \label{LenzLaw}
+\end{equation}
+
+\noindent This is the basic process behind vibrating sample magnetometers (VSMs) and superconducting quantum interference devices (SQUIDs).
+
+\subsection{Calorimetry}
+
+These type of measurements allow the determination of the heat capacity of a material which possesses knowledge of the interactions that have determined its properties. It also allows for the investigation of phase transitions.
+
+\noindent The magnetic entropy of a system can be estimated from its heat capacity:
+
+\begin{equation}
+    S(T_f) = \int_0^{T_f} \frac{C(T)}{T} dT,
+    \label{EstimatedMagneticEntropy}
+\end{equation}
+
+\noindent and then compared to the expected entropy of a magnetic ion with total angular momentum $J$:
+
+\begin{equation}
+    S = Rln(2J + 1)
+    \label{ExactMagneticEntropy}.
+\end{equation}
+
+\noindent The principal method for determining the specific heat capacity is that of thermal relaxation. This measures the temperature of a material as a function of time and heater power. From the time constant associated with the heating and cooling the specific heat capacity can be determined.
+
+\subsection{Magnetic Neutron Scattering}
+
+This is typically performed using a triple-axis spectrometer. The monochromator crystal ensures that the neutrons have a single wavelength and not a distribution as they would have from a source.
+
+\noindent The neutron has some properties that make it useful:
+
+\begin{itemize}
+    \item Similar wavelength to atomic spacings which means that diffraction measurements may be performed.
+    \item Similar energy to atomic/electronic processes which allows for spectroscopy measurements.
+    \item They are highly penetrating and so can be used for bulk measurements.
+    \item They are non-destructive (when slow enough) so can be used to probe delicate samples.
+\end{itemize}
+
+\noindent Elastic magnetic scattering probes static magnetic structures whilst inelastic scattering probes the spin dynamics. The magnetic scattering cross section is proportional to the fourier transform of the spin correlation function.
+
+\subsection{M\"ossbauer Spectroscopy}
+
+This relies on the radioactive decay of $57^$Co to an excited state of $57^$Fe.
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent The gamma ray emitted from the $57^$Fe between $I = \frac{3}{2}$ and $I = \frac{1}{2}$ has an energy of 14.4~keV. It is then directed towards a sample containing $57^$Fe. The doppler effect is present as the $57^$Co source moves towards the sample. The resulting absorption of photons is detected as a function of the speed fo the $57^$Co source. There is no recoil affecting the relative velocity due to the source being a bulk material. There is also a small probability of emission/absorption without a phonon. This process can be used to investigate quadrapole or magnetic splitting. However this process only works for certain materials.
+
+\subsection{Muon-Spin Rotation}
+
+Muons are prepared by colliding high energy protons with carbon nuclei which produces pions which in turn decay:
+
+\begin{equation}
+    \pi^+ \rightarrow \mu^+ + \nu_\mu
+    \label{PionDecay}
+\end{equation}
+
+\noindent These muons emerge spin polarised and are implanted into the sample. Muons have a relatively long lifetime but eventually decay into positrons:
+
+\begin{equation}
+    \mu^+ \rightarrow e^+ + \Bar{\nu}_\mu + \nu_e
+    \label{MuonDecay}
+\end{equation}
+
+\noindent These positrons tend to leave the sample along the direction which the muon spins was aligned along when the muon decayed. Typically this follows the distribution:
+
+\begin{equation}
+    W(\theta) = 1 + \alpha cos(\theta)
+    \label{PositronDistribution}
+\end{equation}
+
+\noindent This method probes the local magnetic field of where the muon was implanted.
+
+\section{Magnetic Domains}
+
+When ferromagnets are cooled to $T < T_C$, magnetic domains are formed. These are regions of uniform magnetisation and are separated by domain walls of finite size.
+The main domain walls are N\'eel walls and Bloch walls. In N\'eel walls the plane of rotation of magnetic moments is perpendicular to the plane of the wall, whilst for Bloch walls it is parallel.
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent We now explore the Bloch wall further. The exchange energy of two spins in the wall is:
+
+\begin{equation}
+    E = -2J\underline{S}_1 \cdot \underline{S}_2 = -2JS^2\cos(\theta) \approx -2JS^2(1 - \frac{\theta^2}{2})
+    \label{ExchangeEnergy2SpinBlochWall}
+\end{equation}
+
+\noindent This means that the energy cost to rotate one spin relative to another is given by:
+
+\begin{equation}
+    JS^2\theta^2
+    \label{EnergyCostRotationBlochWall}
+\end{equation}
+
+\noindent So the energy cost for a rotation by $\pi$ with $N$ spins is, using Eq~\ref{EnergyCostRotationBlochWall}, given by:
+
+\begin{equation}
+    JS^2(\frac{\pi}{N})^2 N = \frac{JS^2\pi^2}{N},
+    \label{FullEnergyCostBlochWall}
+\end{equation}
+
+\noindent which means the energy per unit area of a Bloch wall, $\sigma_{BW}$, in a cubic crystal is given by:
+
+\begin{equation}
+    \sigma_{BW} =  \frac{JS^2\pi^2}{Na^2},
+    \label{EnergyPerUnitAreaBlochWall}
+\end{equation}
+
+\noindent where $a$ is the lattice parameter. However, this implies that $\sigma_{BW} \rightarrow 0$ as $N \rightarrow \infty$, meaning no domain walls would form. The interaction that prevents this and allows the formation of domain walls is due to magnetocrystalline anisotropy.
+
+\noindent The energy cost comes from when the spins in the domain wall rotate. This means that they have a component along the hard plane/axis which in turn costs energy. We can model this magnetically preferred direction with a magnetic anisotropy energy given by:
+
+\begin{equation}
+    E = D\sin^2(\theta),
+    \label{AnisotropyEnergy}
+\end{equation}
+
+\noindent where $D > 0$ is the anisotropy constant. So summing over all magnetic moments:
+
+\begin{equation}
+    \Sigma_{i = 1}^N D\sin^2(\theta) \approx \frac{N}{\pi} \int_0^\pi D\sin^2(\theta) d\theta = \frac{ND}{2}
+    \label{TotalAnisotropyEnergyDensity}
+\end{equation}
+
+\noindent This means that the Bloch wall energy per unit area, combining Eq~\ref{EnergyPerUnitAreaBlochWall} and Eq~\ref{TotalAnisotropyEnergyDensity}, is given by:
+
+\begin{equation}
+    \sigma_{BW} = \frac{JS^2\pi^2}{Na^2} + \frac{NDa}{2}
+    \label{FinalEnergyUnitAreaBlochWallExpression}
+\end{equation}
+
+\noindent From which we can find the minimum number of spins comprising the wall:
+
+\begin{equation}
+    \frac{d \sigma_{BW}}{dN} = 0 \Rightarrow N = \pi S \sqrt{\frac{2J}{Da^3}
+    }
+    \label{NumberSpinsBlochWall}
+\end{equation}
+
+\noindent This in turn means that the width of the wall is:
+
+\begin{equation}
+    \delta = Na = \pi S \sqrt{\frac{2J}{Da}},
+    \label{BlochWallWidth}
+\end{equation}
+
+\noindent and also that:
+
+\begin{equation}
+    \sigma_{BW} = \pi S \sqrt{\frac{2JD}{a}}
+    \label{FinalEnergyUnitAreaBlochWall}
+\end{equation}
+
+\noindent The formation of domain walls helps save dipolar energy. This is because of the necessity to satisfy $\underline{\nabla} \cdot \underline{B}$. So whenever a system possesses a magnetisation it also has a demagnetising field since, using Eq~\ref{MagneticFluxDensity}, $\underline{\nabla} \cdot \underline{M} = - \underline{\nabla} \cdot \underline{H}$.
+
+\noindent The (surface) demagnetisation energy is given by:
+
+\begin{equation}
+    E = \frac{-\mu_0}{2} \int_V \underline{M} \cdot \underline{H}_d d\tau
+    \label{DemagnetisationEnergy}
+\end{equation}
+
+\noindent For an ellipsoidal shape, magnetised along one of its principal axes:
+
+\begin{equation}
+    \underline{H}_d = - N\underline{M},
+    \label{DemagnetisingField}
+\end{equation}
+
+\noindent where $N$ is the demagnetising factor. Combining Eq~\ref{DemagnetisationEnergy} and Eq~\ref{DemagnetisingField} we find that:
+
+\begin{equation}
+    E = \frac{\mu_0 N M^2 V}{2}
+    \label{TotalDemagnetisationEnergy}
+\end{equation}
+
+\noindent This dipolar energy may be saved by breaking the sameple into domains. However the number of domains formed is a balance between the cost of demagnetisation and the cost of domain walls.
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent For $\underline{H}$ parallel to a long cylindrical rod $N = 0$, whilst $N = 1$ for $\underline{H}$ perpendicular to a flat plate and $N = \frac{1}{3}$ for a sphere. Although $N$ is actually a matrix (trace must equal 1?).
+
+\noindent The magnetisation of a material as a function of applied field in the form of a hysteresis loop shows the behaviour due to domains.
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent This behaviour is due to the domain walls becoming pinned on defects. The magnetisation rotation region is where the domains are rotated away from the easy axis/plane due to the strength of the magnetic field.
+
+\noindent Hysteresis loops can distinguish between hard and soft magnets:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent Soft magnets have the following properties:
+
+\begin{itemize}
+    \item Small anisotropy energy.
+    \item Domain walls are broad and easy to move
+    \item Small coercive fields
+\end{itemize}
+
+\noindent whereas hard magnets:
+
+\begin{itemize}
+    \item Domains are narrow and hard to move due to large anisotropy energy.
+    \item No spontaneous magnetisation.
+\end{itemize}
+
+Magnetic materials can undergo a process known as magnetostriction. This is where the shape of a magnetic material changes when magnetised. This occurs since the crystal can lower its anisotropy energy by deforming itself. This is dependent on strain.
+
+\noindent We now consider single domain small magnetic particles:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent It is possible for small magnetic particles with a single domain to form.
+
+\noindent The behaviour of such a particle in an external magnetic field can be investigated with:
+
+\begin{equation}
+    E = D\sin^2(\theta - \phi) - \mu_0 H M \cos(\phi),
+    \label{SingleDomainMagneticParticleEnergy}
+\end{equation}
+
+\noindent where $\theta$ is the angle between $\underline{H}$ and the easy axis, and $\phi$ is the angle between $\underline{M}$ and $\underline{H}$. If $\theta = 90^\circ$ we get a hysteresis loop for a soft magnet with plateaus at extreme magnetic fields and if $\theta = 0^\circ$ we obtain the hysteresis loop for a hard magnet.
+
+\section{Paramagnets and Ferromagnets}
 
 \section{Landau Theory}
 
