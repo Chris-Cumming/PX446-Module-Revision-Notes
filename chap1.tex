@@ -943,6 +943,213 @@ This means that $\alpha_2(T)$ changes sign at $T = T_C$, so we may write:
 
 \section{Anti-Ferromagnets}
 
+The Hamiltonian for an antiferromagnetic system is the same as that of a ferromagnetic system:
+
+\begin{equation}
+    H = -\Sigma_{i,j} J_{ij} \underline{S}_i \cdot \underline{S}_j + g \mu_B \Sigma_i \underline{S}_i \cdot \underline{B},
+    \label{AntiFerromagneticHamiltonian}
+\end{equation}
+
+\noindent where $J < 0$ for such an anti-ferromagnetic systems.
+
+\noindent We model this system as a superposition of two inter-penetrating sub-lattices. This results in the unit cell being twice as large.
+Since there are two sub-lattices of equal but opposite magnetisation:
+
+\begin{equation}
+    \underline{M} = \underline{M}_+ + \underline{M}_- = 0,
+    \label{OverallMagnetisationAntiFerromagnet}
+\end{equation}
+
+\noindent we use the staggered magnetisation as an order parameter:
+
+\begin{equation}
+    \eta = \underline{M}_+ - \underline{M}_-.
+    \label{StaggeredMagnetisation}
+\end{equation}
+
+\noindent Taking the mean field approach, each sub-lattice feels an effective field due to the others magnetisation:
+
+\begin{equation}
+    \underline{B}_+ = - |\lambda| \underline{M}_-
+\end{equation}
+
+\begin{equation}
+    \underline{B}_- = - |\lambda| \underline{M}_+
+\end{equation}
+
+\noindent where $\lambda > 0$. This means the magnetisation on each sub-lattice is given by:
+
+\begin{equation}
+    M_{\pm} = M_{SAT} B_J(y) = M_{SAT} B_J(\frac{g_j \mu_B J(B - |\lambda|M_{\mp})}{k_B T}).
+    \label{SubLatticeMagnetisation}
+\end{equation}
+
+\noindent Then if we assume that $M = M_+ = M_-$, then in zero field Eq~\ref{SubLatticeMagnetisation} becomes:
+
+\begin{equation}
+    M = M_{SAT} B_J(\frac{g_j \mu_B J |\lambda| M}{k_B T},
+    \label{SubLatticeMagnetisationZeroField}
+\end{equation}
+
+\noindent from which, in a similar process to determining the Curie temperature, the critical temperature for anti-ferromagnets (Neel temperature) is given by:
+
+\begin{equation}
+    T_N = \frac{g_j \mu_B (J + 1) |\lambda| M_{SAT}}{3k_B} = \frac{n |\lambda| \mu_{eff}^2}{3k_B},
+    \label{NeelTemperature}
+\end{equation}
+
+\noindent above which magnetic order disappears.
+
+\noindent So in general, above their respective critical temperatures the magnetic susceptibility of magnetic systems follow:
+
+\begin{equation}
+    \chi_{FM} \sim \frac{1}{T - T_C}
+    \label{FerromagneticSusceptibility}
+\end{equation}
+
+\begin{equation}
+    \chi_{AFM} \sim \frac{1}{T + T_N}
+\end{equation}
+
+\noindent which may be summarised as:
+
+\begin{equation}
+    \chi \sim \frac{1}{T - \theta},
+    \label{MagneticSusceptiblityAboveCriticalTemperature}
+\end{equation}
+
+\noindent where $\theta$ is the Weiss constant. This can be used to determine the magnetic ordering present in a material whilst that material is above the critical temperature. If $\theta = 0$ then the material behaves as a paramagnet, similar to the Curie Law, Eq~\ref{ArbitraryQuantumSusceptibility}. If $\theta > 0$, the system is ferromagnetic as described by Eq~\ref{CurieWeissLaw}. If $\theta < 0$, the system is anti-ferromagnetic.
+
+\noindent Normally the experimentally determined values are far from those predicted by the mean field approach. This is because we have ignored the effect of a sub-lattice on itself. So in reality, we have:
+
+\begin{equation}
+    B_{\pm} = -|\lambda|M_{\mp} + \Gamma M_{\pm},
+\end{equation}
+
+\noindent instead of Eq 1.97 and Eq 1.98. This means that Eq~\ref{NeelTemperature} becomes:
+
+\begin{equation}
+    T_N = \frac{n(|\lambda| - \Gamma)}{3k_B} \mu_{eff}^2
+    \label{ModifiedNeelTemperature}
+\end{equation}
+
+\noindent We now consider the behaviour of an antiferromagnet for $T < T_N$. This is more difficult than the ferromagnetic case since the direction along which an external magnetic field is applied can cause differing behaviour.
+
+\noindent We first consider small magnetic fields. Applying a magnetic field perpendicular:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent The energy of this two spin system is, as per usual, a combination of an exchange term and a zeeman term:
+
+\begin{equation}
+    E = U \underline{M}_A \cdot \underline{M}_B - \underline{B} \cdot (\underline{M}_A + \underline{M}_B)
+    \label{TwoSpinAntiferromagnetEnergy}
+\end{equation}
+
+\noindent and since $\underline{B}$ is small, $\phi$ the angle between the spins original direction and that of when the magnetic field is applied will also be small, we can use the small angle approximations for $\sin(\theta)$ and $\cos(\theta)$, such that Eq~\ref{TwoSpinAntiferromagnetEnergy} becomes:
+
+\begin{equation}
+    E = UM^2[-1 + \frac{(2\phi)^2}{2}] - 2BM\phi
+    \label{TwoSpinAntiferromagnetcEnergyApproximate}
+\end{equation}
+
+\noindent SHOULD ADD MORE DETAIL HERE ABOUT HOW WE GET THIS.
+
+\noindent Minimising this expression with respect to the angle we find:
+
+\begin{equation}
+    \frac{\partial E}{\partial \phi} = 4UM^2\phi - 2BM = 0
+    \label{MinimsedTwoSpinAntiferromagnetEnergy}
+\end{equation}
+
+\noindent Resulting in:
+
+\begin{equation}
+    \phi  = \frac{B}{2UM}
+    \label{MinimsedAngleTwoSpinAntiferromagnet}
+\end{equation}
+
+\noindent The horizontal component of the total magnetisation is still zero, however there is now a vertical component given by:
+
+\begin{equation}
+    M_{TOT} = 2M\sin(\phi) \approx 2M\phi = \frac{B}{U},
+    \label{TotalVerticalMagnetisationTwoSpinAntiferromagnet}
+\end{equation}
+
+\noindent using Eq~\ref{MinimsedAngleTwoSpinAntiferromagnet}. As a result we find that the susceptibility of this antiferromagnet to fields perpendicular to its magnetisation is given by:
+
+\begin{equation}
+    \chi = \frac{dM}{dH} = \frac{\mu_0}{U} = \chi_\perp,
+    \label{LowFieldPerpendicularSusceptibility}
+\end{equation}
+
+\noindent which is a constant. If instead we apply the external field to be parallel to the magnetisation, such that for low fields Eq~\ref{OverallMagnetisationAntiFerromagnet} still holds, then for $T = 0$ we find $\chi_\parallel = 0$. This leads to the following behaviour for small external magnetic fields applied:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent Note that for a powder of antiferromagnetic material:
+
+\begin{equation}
+    \chi_{powder} = \frac{2}{3} \chi_\perp + \frac{1}{3} \chi_{\parallel}.
+\end{equation}
+
+\noindent We now consider the behaviour of antiferromagnets in high magnetic fields but it is still the case that $T < T_N$. Here we now account for the magnetic anisotropy that will exist in materials, so that Eq~\ref{TwoSpinAntiferromagnetEnergy} now becomes:
+
+\begin{equation}
+    E = U \underline{M}_A \cdot \underline{M}_B - \underline{B} \cdot (\underline{M}_A + \underline{M}_B) - |D|[(M_A^Z)^2 + (M_B^Z)^2],
+    \label{TwoSpinAntiferromagnetAnisotropyEnergy}
+\end{equation}
+
+\noindent where $D < 0$, so the spins like to align along the easy axis, in this case the z axis. We further assume that the exchange energy dominates over the anisotropy energy such that $U \gg |D|$. This means the system prefers to try to keep the spins anti-aligned more than it prefers to keep them aligned along the easy axis.
+
+\noindent For $B \perp z$ as we have already seen, from Eq~\ref{LowFieldPerpendicularSusceptibility}, $\chi_\perp$ is a constant so $M \sim B$. However the field acts against both the exchange and anisotropy energy so:
+
+\begin{equation}
+    M \sim \frac{B}{U + |D|} \approx \frac{B}{U},
+    \label{HighFieldPerpendicularSusceptibility}
+\end{equation}
+
+\noindent which returns us the same behaviour as before. The more interesting behaviour is observed for $B \parallel z$. In the low field case $\chi_\parallel = 0$ at $T = 0$ since $M_{TOT} = 0$. However in the high field case a spin flop transition occurs when $B > B_{SF}$.
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent In this case the magnetic field is competing with the exchange energy but working with the anisotropy energy such that:
+
+\begin{equation}
+    M \sim \frac{B}{U - |D|} \approx \frac{B}{U},
+    \label{HighFieldParallelSusceptibility}
+\end{equation}
+
+\noindent from which it can be seen that $\chi_\parallel \approx \chi_\perp$ for $B > B_{SF}$. This spin flop transition is a 1st order phase transition.
+
+\noindent This behaviour for $B \parallel z$ is summarised in the magnetic phase diagram:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent The main characteristics of antiferromagnets to remember are that since the exchange constant, J, is negative it favours anti-parallel alignments of spins. This results in systems which have no net magnetisation.
+
+\noindent Note that in antiferromagnets you can have spin flip transitions but this only occurs when the anisotropy energy has a similar or larger contribution than the exchange energy. This ensures that the spins have a very strong tendency to remain along the easy axis.
+
 \section{More Magnetic Order Types}
 
 \section{Spin Waves and Magnons}
