@@ -563,7 +563,219 @@ Magnetic materials can undergo a process known as magnetostriction. This is wher
 
 \section{Paramagnets and Ferromagnets}
 
+We first consider the semi-classical approach to determine the properties of a paramagnet. From Eq~\ref{EnergyMagneticMoment} we know that $E = -\underline{\mu} \cdot \underline{B} = -\mu B \cos(\theta)$. So the magnetic moments can orientate themselves anywhere in the interval [0, $\pi$).
+We can determine the behaviour of the paramagnetic system using the continuous partition function:
+
+\begin{equation}
+    Z = \int^\pi_{-\pi} e^{-\mu B \beta \cos(\theta)} d\theta.
+    \label{SemiClassicalPartitionFunction}
+\end{equation}
+
+\noindent Then by using:
+
+\begin{equation}
+    m = - \frac{\partial F}{\partial B},
+    \label{MagneticMomentPerSpin}
+\end{equation}
+
+\noindent where $F = -k_B T lnZ$ is the Helmholtz free energy and $m$ is the magnetic moment per spin, and by using $M = nm$ where $n$ is the number density of spins, we find:
+
+\begin{equation}
+    \frac{M}{M_{SAT}} = \coth(y) - \frac{1}{y} \equiv L(y),
+    \label{SemiClassicalMagnetisation}
+\end{equation}
+
+\noindent where $L(y)$ is the Langevin function and:
+
+\begin{equation}
+    y = \frac{\mu B}{k_B T}
+    \label{SemiClassicalY}
+\end{equation}
+
+\noindent For small y, i.e small $\frac{B}{T}$, the Langevin function approximates to:
+
+\begin{equation}
+    L(y) \approx \frac{y}{3} = \frac{\mu B}{3 k_B T} = \frac{M}{M_{SAT}},
+    \label{ApproximatedSemiClassicalMagnetisation}
+\end{equation}
+
+\noindent since for small y, $\coth(y) \approx \frac{1}{y} + \frac{y}{3}$. From Eq~\ref{ApproximatedSemiClassicalMagnetisation} we can determine the susceptibility:
+
+\begin{equation}
+    \chi = \frac{dM}{dH} = \frac{n \mu_0 \mu^2}{3 k_B T} = \frac{C}{T},
+    \label{SemiClassicalySusceptibility}
+\end{equation}
+
+\noindent which is known as the Curie Law and we have used:
+
+\begin{equation}
+    M_{SAT} = n \mu,
+    \label{SemiClassicalSaturatedMagnetisation}
+\end{equation}
+
+\noindent and that $B \approx \mu_0 H$.
+
+\noindent We now perform the same calculation but for a quantum mechanical system. This means the magnetic moments can only occupy certain quantised values. For a $J=\frac{1}{2}$ paramagnet (where $L=0$ and $S=\frac{1}{2}$) the energy levels within a magnetic field are given by:
+
+\begin{equation}
+    E = g m_j \mu_B B = \pm \mu_B B,
+    \label{EnergyLevelsHalfParamagnet}
+\end{equation}
+
+\noindent as $g\approx2$ and $m_j = \pm\frac{1}{2}$. Then following the same process as before by using the discrete partition function and letting:
+
+\begin{equation}
+    y = \frac{\mu_B B}{k_B T},
+    \label{QuantumY}
+\end{equation}
+
+\noindent we find that:
+
+\begin{equation}
+    \frac{M}{M_{SAT}} = \tanh(y),
+    \label{QuantumMagnetisation}
+\end{equation}
+
+\noindent where:
+
+\begin{equation}
+    M_{SAT} = n \mu_B.
+    \label{QuantumSaturatedMagnetisation}
+\end{equation}
+
+\noindent This means for small $\frac{B}{T}$ we find that the susceptibility takes the form:
+
+\begin{equation}
+    \chi = \frac{n \mu_0 \mu_B^2}{k_B T} = \frac{C}{T},
+    \label{QuantumSusceptibility}
+\end{equation}
+
+\noindent which is another form of the Curie Law as it shows the same temperature dependence as for the semi-classical case.
+
+\noindent This process can be repeated a final time for a paramagnet of arbitrary $J$, which now has energy levels given by:
+
+\begin{equation}
+    E = m_j g_j \mu_B B,
+    \label{EnergyLevelsArbitraryParamagnet}
+\end{equation}
+
+\noindent where $g_j$ is the Lande g factor. Now letting:
+
+\begin{equation}
+    y = \frac{g_j \mu_B B J}{k_B T},
+    \label{ArbitraryQuantumY}
+\end{equation}
+
+\noindent we find that:
+
+\begin{equation}
+    \frac{M}{M_{SAT}} = B_J(y) = \frac{2J + 1}{2J}\coth(\frac{2J + 1}{2J}y) - \frac{1}{2J}\coth(\frac{y}{2J}),
+    \label{ArbitraryQuantumMagnetisation}
+\end{equation}
+
+\noindent where $B_J(y)$ is the Brillouin function. For small $\frac{B}{T}$, we again find the same temperatude dependence:
+
+\begin{equation}
+    \chi = \frac{n \mu_0 \mu_{eff}^2}{3 k_B T} = \frac{C}{T},
+    \label{ArbitraryQuantumSusceptibility}
+\end{equation}
+
+\noindent where $\mu_{eff} = g_j \mu_B \sqrt{J(J + 1)}$. From Eq~\ref{ArbitraryQuantumMagnetisation} it is possible to see that $B_{\frac{1}{2}}(y) = \tanh(y)$ and $B_{\inf}(y) = L(y)$ as we would expect.
+
+\noindent Next we develop the Weiss mean field model of ferromagnetism. The Hamiltonian for this system is a combination of an exchange term and a Zeeman term:
+
+\begin{equation}
+    H = \Sigma_{i,j} J_{ij} \underline{S}_i \cdot \underline{S}_j + g \mu_B \Sigma_j \underline{S}_j \cdot \underline{B}.
+    \label{FerromagneticHamiltonian}
+\end{equation}
+
+\noindent The mean field approximation constitutes defining an effective molecular field that is produced by all sites in the system other than the $i^{th}$ site which it acts on:
+
+\begin{equation}
+    \underline{B}_{mf} = \frac{-2}{g \mu_B} \Sigma_j J_{ij} \underline{S}_j
+    \label{MeanField}.
+\end{equation}
+
+\noindent This equation can be used to replace the exchange term in our Hamiltonian:
+
+\begin{equation}
+    \Sigma_{i,j} J_{ij} \underline{S}_i \cdot \underline{S}_j = -2 \Sigma_{j} J_{ij} \underline{S}_i \cdot \underline{S}_j = -2 \underline{S}_i \cdot \Sigma_{i,j} J_{ij} \underline{S}_j = g \mu_B \underline{S}_i \cdot \underline{B}_mf.
+\end{equation}
+
+\noindent As a result Eq~\ref{FerromagneticHamiltonian} becomes:
+
+\begin{equation}
+    H = g \mu_B \Sigma_i \underline{S}_i \cdot (\underline{B} + \underline{B}_mf)
+    \label{MeanFieldHamiltonian}
+\end{equation}
+
+\noindent which is in the same form as that of the paramagnetic case. We now further assume that:
+
+\begin{equation}
+    \underline{B}_{mf} = \lambda \underline{M},
+    \label{MeanFieldAssumption}
+\end{equation}
+
+\noindent where $\lambda > 0$. This means we can use our equations for the abitrary $J$ paramagnet but in an effective field given by $\underline{B} + \lambda \underline{M}$. So the magnetisation of this ferromagnetic system has the same as for the paramagnetic case, Eq~\ref{SemiClassicalMagnetisation}:
+
+\begin{equation}
+    \frac{M}{M_{SAT}} = B_J(y)
+    \label{FerromagneticMagnetisation},
+\end{equation}
+
+\noindent but now Eq~\ref{SemiClassicalY} takes the form:
+
+\begin{equation}
+    y = \frac{g_j \mu_B J (B + \lambda M)}{k_B T}
+    \label{FerromagneticY}
+\end{equation}
+
+\noindent This pair of equations can be solved graphically. The intersection points represent the magnetisation values the system can take. In the case of $B = 0$, for $T > T_C$ there is only one solution of $M = 0$, whilst for $T \leq T_C$ there are three, one of which is $M = 0$ whilst the other two are $M \neq 0$.
+However, if $B \neq 0$, there is always a solution with $M \neq 0$ regardless of the temperature of the system.
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent The Curie (critical) temperature can be obtained from the case where $B = 0$ by finding where the gradients of Eq~\ref{FerromagneticMagnetisation} and Eq~\ref{FerromagneticY} are equal to each other for small y:
+
+\begin{equation}
+    T_C = \frac{g_j \mu_B (J + 1) \lambda M_{SAT}}{3 k_B}
+    \label{CurieTemperature}
+\end{equation}
+
+\noindent If $T\gg T_C$ and we apply a small magnetic field, we can use the $y\ll1$ approximation in Eq~\ref{FerromagneticMagnetisation}:
+
+\begin{equation}
+    B_J(y) \rightarrow \frac{y (J + 1)}{3J}
+\end{equation}
+
+\noindent which means, using Eq~\ref{CurieTemperature}, we find:
+
+\begin{equation}
+    \frac{M}{M_{SAT}} = \frac{T_C}{\lambda M_{SAT}} (\frac{B + \lambda M}{T})
+    \label{ApproximatedFerromagneticMagnetisation}
+\end{equation}
+
+\noindent This allows us to determine the Curie-Weiss law for the magnetic susceptibility:
+
+\begin{equation}
+    \chi = \frac{dM}{dH} = \frac{\mu_0 T_C}{\lambda (T - T_C)} = \frac{C}{T- T_C} \~ \frac{1}{T - T_C}
+    \label{CurieWeissLaw}
+\end{equation}
+
+\noindent since from Eq~\ref{ApproximatedFerromagneticMagnetisation}:
+
+\begin{equation}
+    M = \frac{T_C B}{\lambda (T - T_C)}
+\end{equation}
+
 \section{Landau Theory}
+
+
 
 \section{Anti-Ferromagnets}
 
