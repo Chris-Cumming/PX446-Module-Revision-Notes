@@ -763,7 +763,7 @@ However, if $B \neq 0$, there is always a solution with $M \neq 0$ regardless of
 \noindent This allows us to determine the Curie-Weiss law for the magnetic susceptibility:
 
 \begin{equation}
-    \chi = \frac{dM}{dH} = \frac{\mu_0 T_C}{\lambda (T - T_C)} = \frac{C}{T- T_C} \~ \frac{1}{T - T_C}
+    \chi = \frac{dM}{dH} = \frac{\mu_0 T_C}{\lambda (T - T_C)} = \frac{C}{T- T_C} \sim \frac{1}{T - T_C}
     \label{CurieWeissLaw}
 \end{equation}
 
@@ -775,7 +775,171 @@ However, if $B \neq 0$, there is always a solution with $M \neq 0$ regardless of
 
 \section{Landau Theory}
 
+Landau theory is a theoretical technique, based on mean field theory, which describes continuous (2nd order) phase transitions.
 
+\noindent The basic assumption is that the free energy density, $f$ of a system may be expanded as a power series about the critical point. In general the free energy density will be a function of many different parameters including the order parameter, $\eta$. If $T > T_C$ then $\eta = 0$ and the system is in a high symmetry phase, whilst for $T < T_C$, $\eta \neq 0$ and the system is in a low symmetry phase.
+
+\noindent For a magnetic system we choose $\eta = M$, i.e the magnetisation of the system. The relevant parameters for this system is the temperature, $T$, and the presence of an external magnetic field, $H$. This means our expansion takes the form:
+
+\begin{equation}
+    f(T, M) = f_0(T) + \alpha_2(T) M^2 + \alpha_(T) M^4 + ... ,
+    \label{FreeEnergyDensityPowerExpansion}
+\end{equation}
+
+\noindent where $\underline{M} \cdot \underline{M} = M^2$ and there are no odd powers of $M$ since there is no energy difference between $\pm M$ states.
+
+\noindent For a given $T$, the system is in equilibrium when:
+
+\begin{equation}
+    \frac{\partial f}{\partial m} = 0,
+    \label{EquilibriumCondition}
+\end{equation}
+
+\noindent and in a minimum when:
+
+\begin{equation}
+    \frac{\partial^2 f}{\partial m^2} > 0
+    \label{MinimumCondition}
+\end{equation}
+
+\noindent Using Eq~\ref{FreeEnergyDensityPowerExpansion} in Eq~\ref{EquilibriumCondition} and Eq~\ref{MinimumCondition} respectively we find:
+
+\begin{equation}
+    2M\alpha_2(T) + 4\alpha_4(T)M^3 = 0
+    \label{MagneticEquilibriumCondition}
+\end{equation}
+
+\begin{equation}
+    \alpha_2(T) + 6\alpha_4(T)M^2 > 0
+    \label{MagneticMinimumCondition}
+\end{equation}
+
+\noindent For $T > T_C$, $M = 0$, which means that $\alpha_2(T) > 0$  using Eq~\ref{MagneticMinimumCondition}. For $T < T_C$, $M \neq 0$, which means that from Eq~\ref{MagneticEquilibriumCondition} we see that $\alpha_2(T) = -2M^2\alpha_4(T)$ which when substituted into Eq~\ref{MagneticMinimumCondition} results in $M^2\alpha_4(T) > 0$ which in turn means that $\alpha_2(T) < 0$.
+This means that $\alpha_2(T)$ changes sign at $T = T_C$, so we may write:
+
+\begin{equation}
+    \alpha_2(T) = (T - T_C)\alpha_0,
+    \label{Alpha2Coefficient}
+\end{equation}
+
+\noindent where $\alpha_0 > 0$. As such we find from Eq~\ref{MagneticEquilibriumCondition}:
+
+\begin{equation}
+    M^2 = \frac{\alpha_0(T_C - T)}{2\alpha_4},
+    \label{MagnetisationEquilibriumCondition}
+\end{equation}
+
+\noindent which is only valid in the case of $T < T_C$ and if we assume that $\alpha_4(T) = \alpha_4$.
+
+\noindent So for $T > T_C$, Eq~\ref{FreeEnergyDensityPowerExpansion} becomes:
+
+\begin{equation}
+    f(T, M) = f_0(T)
+    \label{PowerExpansionAboveTC}
+\end{equation}
+
+\noindent and for $T < T_C$, using Eq~\ref{MagnetisationEquilibriumCondition} in Eq~\ref{FreeEnergyDensityPowerExpansion} we find:
+
+\begin{equation}
+    f(T, M) = f_0(T) - \frac{\alpha_0(T)^2 (T_C - T)^2}{4\alpha_4}
+    \label{PowerExpansionBelowTC}
+\end{equation}
+
+\noindent This behaviour is shown more clearly in the following:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent A major limitation of Landau theory is that it ignores correlations and fluctuations in the order paramater which become increasingly important close to $T_C$.
+
+\noindent We now continue with this magnetic system and calculate its entropy and specific heat capacity which can give indications of phase transitions:
+
+\begin{equation}
+    S = - \frac{\partial f}{\partial T}
+    \label{Entropy}
+\end{equation}
+
+\begin{equation}
+    C = T \frac{\partial S}{\partial T}
+    \label{SpecificHeatCapacity}
+\end{equation}
+
+\noindent So for $T > T_C$, using Eq~\ref{PowerExpansionAboveTC}, we find:
+
+\begin{equation}
+    S = -\frac{\partial f_0}{\partial T} \Rightarrow C = -T\frac{\partial^2 f_0}{\partial T^2},
+    \label{EntropySpecificHeatAboveTC}
+\end{equation}
+
+\noindent and using Eq~\ref{PowerExpansionBelowTC} for $T < T_C$:
+
+\begin{equation}
+    S = -\frac{\partial f_0}{\partial T} - \frac{\alpha_0^2(T_C - T)}{2\alpha_4} \Rightarrow C = -T\frac{\partial^2 f_0}{\partial T^2} + \frac{\alpha_0^2 T}{2\alpha_4}.
+    \label{EntropySpecificHeatBelowTC}
+\end{equation}
+
+\noindent From this it is clear that there is a discontinuity in the specific heat capacity at $T = T_C$ of $\frac{\alpha_0^2 T_C}{2\alpha_4}$, as shown in the figure below:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent In reality a lambda anomaly is experimentally observed.
+
+\noindent We now consider the same system but with a small extern magnetic field applied such that Eq~\ref{FreeEnergyDensityPowerExpansion} becomes:
+
+\begin{equation}
+    f = f_0(T) + \alpha_0 (T - T_C) M^2 + \alpha_4 M^4 - \mu_0 H M
+    \label{FreeEnergyDensityPowerExpansionExternalField}
+\end{equation}
+
+\noindent Using the equilibrium condition on Eq~\ref{FreeEnergyDensityPowerExpansionExternalField} we find:
+
+\begin{equation}
+    \frac{\partial f}{\partial m} = 0 = 2\alpha_0 (T - T_C)M + 4\alpha_4 M^3 - \mu_0 H.
+    \label{EquilibriumConditionExternalField}
+\end{equation}
+
+\noindent Then neglecting the cubic term as $M \ll 1$, we can rearrange the above expression:
+
+\begin{equation}
+    M = \frac{\mu_0 H}{2\alpha_0 (T - T_C)},
+    \label{MagnetisationExternalField}
+\end{equation}
+
+\noindent such that the susceptibility of this system is found to take the form:
+
+\begin{equation}
+    \chi = \frac{dM}{dH} = \frac{\mu_0}{2\alpha_0(T - T_C)},
+    \label{SusceptibilityExternalField}
+\end{equation}
+
+\noindent which has the same form as the Curie-Weiss Law, Eq~\ref{CurieWeissLaw}.
+
+\noindent Since we have ignored correlations and fluctuations, as is typical in mean field theories, the values of critical exponents don't match the experimentally determined values. So instead of:
+
+\begin{equation}
+    M \sim (T_C - T)^{\frac{1}{2}},
+    \label{CriticalExponentMagnetisationMeanField}
+\end{equation}
+
+\noindent we have:
+
+\begin{equation}
+    M \sim (T_C - T)^{\beta},
+    \label{CriticalExponentMagnetisation}
+\end{equation}
+
+\noindent where $\beta \neq \frac{1}{2}$ and is thought to be an irrational number.
+
+\noindent The critical exponent depends on the dimensionality of the system, $d$, the symmetry/dimensionality of the order parameter, $D$, and the range of the interaction. 
 
 \section{Anti-Ferromagnets}
 
