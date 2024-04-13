@@ -1152,4 +1152,75 @@ Since there are two sub-lattices of equal but opposite magnetisation:
 
 \section{More Magnetic Order Types}
 
-\section{Spin Waves and Magnons}
+Ferrimagnetic materials are in essence the same as antiferromagnets, however their net magnetisation is non-zero. They are usually compounds containing different magnetic ions, or mixed valency ions or the same magnetic ion in two different positions.
+
+\noindent The molecular field on each sub-lattice will now be different resulting in more complex temperature dependence. One sub-lattice might dominate at high temperatures whilst the other dominates at low temperatures. This makes the temperature dependence of the magnetic susceptibility more involved and also means the Curie-Weiss law is no longer applicable. There is however a temperature at which the overall magnetisation is 0, this is known as the compensation temperature.
+
+\noindent Another magnetic order type is that of helical order (helimagnetism). In rare earth metals the atoms lie in layers. So within the layer there is ferromagnetic coupling, but between nearest neighbour layers there is an exchange constant, $J_1$, and between next-nearest neighbour layers an exchange constant, $J_2$.
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent Here $\theta$ is the angle between spins in successive layers. This can result in magnetic structure which is not periodic with the crystal structure.]
+
+\noindent The energy of three layers is given by:
+
+\begin{equation}
+    E = -NS^2[J_1 \cos(\theta) + J_2 \cos(2\theta)],
+    \label{HelicalOrderEnergy}
+\end{equation}
+
+\noindent where $N$ is the total number of spins in each plane. Minimising this:
+
+\begin{equation}
+    \frac{\partial E}{\partial \theta} = 0 = J_1 \sin(\theta) + 2J_2 \sin(2\theta),
+    \label{MinimisedHelicalOrderEnergy}
+\end{equation}
+
+\noindent which can be rearranged to:
+
+\begin{equation}
+    [J_1 + 4J_2\cos(\theta)] \sin(\theta) = 0.
+    \label{RearrangedMinimisedHelicalOrderEnergy}
+\end{equation}
+
+\noindent This has two sets of solutions. Either $\sin(\theta) = 0$, so $\theta = 0$ or $\theta = n\pi$, which are either ferromagnetic  or antiferromagnetic behaviour; or:
+
+\begin{equation}
+    \cos(\theta) = \frac{-J_1}{4J_2},
+    \label{HelicalOrderCondition}
+\end{equation}
+
+\noindent which corresponds to helical order. In order for this configuration to be stable we need $J_2 < 0$ and $|J_1| < 4|J_2|$.
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent Another magnetic structure which doesn't necessarily match the periodicity of the crystal structure, i.e is incommensurate with it, is the spin density wave. This is formed from collinear spins producing antiferromagnetic behaviour, where the lengths of magnetic moments vary with time.
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent The final magnetic structure is that of spin glasses. These are made by taking a non-magnetic lattice and populating it sparsely and randomly with magnetic ions. This means there is site and bond randomness, such that the strength of the magnetic interactions is random. The final criteria for such a spin glass is for it to possess magnetic frustration.
+
+\noindent Spin glasses have a freezing temperature, $T_f$, below which there is cooperative freezing of the spins, so they are frozen in the state they occupied when the spin glass reached $T_f$.
+
+\noindent For $T > T_f$ and $T < T_c$, above which it is paramagnetic, the system forms cluster states where independent spins slow down and are only locally connected. As the material approaches $T_f$ there are fewer fluctuations and the interactions become more long range.
+
+\noindent For $T < T_f$ there is no long range magnetic order and thus no Bragg peaks from neutron scattering. The system now occupies one of many possible degenerate states. This is characterised by a very slow relaxation time and having a history dependence. The material is effectively frozen.
+
+\noindent These spin glass states can be characterised using the real and imaginary parts of $\chi$ which is determined using an alternating magnetic field so $\chi = \chi(\omega)$. 
+
+\section{Magnetic Excitations}
