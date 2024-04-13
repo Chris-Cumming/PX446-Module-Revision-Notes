@@ -1224,3 +1224,183 @@ Ferrimagnetic materials are in essence the same as antiferromagnets, however the
 \noindent These spin glass states can be characterised using the real and imaginary parts of $\chi$ which is determined using an alternating magnetic field so $\chi = \chi(\omega)$. 
 
 \section{Magnetic Excitations}
+
+We shall take the semiclassical approach to spin waves in ferromagnets, which are quantised as magnons.
+
+\noindent Consider a 1D chain of $N$ spins, separated by $a$, and coupled by a ferromagnetic interaction:
+
+\begin{equation}
+    H = -2J \Sigma_{i = 1}^N \underline{S}_i \cdot \underline{S}_{i + 1} = E_0
+    \label{SpinWaveHamiltonian}
+\end{equation}
+
+\noindent In the classical ground state each spin is parallel since $J > 0$:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent One possible excitation is to reverse one spin:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent where the new energy of the spin is now:
+
+\begin{equation}
+    E = E_0 + 8JS^2
+    \label{ReversedSpinEnergy}
+\end{equation}
+
+\noindent since for the $p^${th} spin:
+
+\begin{equation}
+    E = -2J(\underline{s}_{p - 1} \cdot \underline{s}_p + \underline{s}_{p} \cdot \underline{s}_{p + 1})
+    \label{PthSpinEnergy}
+\end{equation}
+
+\noindent which shows that by reversing a spin you remove $4JS^2$ of energy and then add another $4JS^2$ worth of energy.
+
+\noindent Another possible excitation, which represents a lower energy state, is the spin wave. In this case the spins share the spin flip amongst themselves.
+
+\noindent We can also treat this with a mean field theory by introducing a magnetic field $\underline{B}_p$ which affects the $p^${th} spin and arises due to its nearest neighbours:
+
+\begin{equation}
+    E = -\underline{\mu}_p \cdot \underline{B_p} = g \mu_B \underline{S}_p \cdot [\frac{-2J}{g \mu_B}(\underline{S}_{p - 1} + \underline{S}_{p + 1})]
+    \label{MeanFieldTheorySpinWaveEnergy}
+\end{equation}
+
+
+\noindent where $\underline{\mu_p}$ is the magnetic moment on the $p^${th} site which is affected by $\underline{B}_p$:
+
+\begin{equation}
+    \underline{\mu}_p = -g \mu_B \underline{S}_p
+    \label{MagneticMomentPthSite}
+\end{equation}
+
+\begin{equation}
+    \underline{B}_p = \frac{-2J}{g\mu_B} (\underline{S}_{p - 1} + \underline{S}_{p + 1})
+    \label{MagneticFieldPthSite}
+\end{equation}
+
+\noindent The resulting torque on the spin on the $p^{th}$ site is given by:
+
+\begin{equation}
+    \underline{\tau}_p = \mu_p \times \underline{B}_p
+    \label{TorquePthSite}
+\end{equation}
+
+\noindent which can be expressed as:
+
+\begin{equation}
+    \hbar \frac{d\underline{S}_p}{dt} = \underline{\tau}_p = 2J[\underline{s}_p \times \underline{s}_{p + 1} + \underline{s}_p \times \underline{s}_{p - 1}],
+    \label{ProperTorquePthSite}
+\end{equation}
+
+\noindent where we have used the fact that torque is the rate of change of angular momentum and in this case the only contribution to the angular momentum is through spin, so there is no orbital contribution.
+
+\noindent Expanding Eq~\ref{ProperTorquePthSite} into its cartesian coordinates we obtain three coupled non-linear ODEs. However they may be linearised by assuming deviations from the ground state are small such that:
+
+\begin{equation}
+    S_p^x, S_p^y \ll S = S_p^z
+    \label{LinearisingConditionSpinWaves}
+\end{equation}
+
+\noindent As a result of this the equations of motion become:
+
+\begin{eqnarray}
+    \frac{dS_p^x}{dt} = \frac{2JS}{\hbar}(2S_p^y - S_{p - 1}^y - S_{p + 1}^y) \\
+    \frac{dS_p^y}{dt} = \frac{2JS}{\hbar}(2S_p^x - S_{p - 1}^x - S_{p + 1}^x) \\
+    \frac{dS_p^z}{dt} = 0 \hspace{37.5mm}
+\end{eqnarray}
+
+\noindent We now assume that the solutions of these equations are travelling wave:
+
+\begin{eqnarray}
+    S_p^x = u e^{i(pka - \omega t)} \label{AssumedSpinWaveSolution1}\\ 
+    S_p^y = v e^{i(pka - \omega t)} \label{AssumedSpinWaveSolution2}
+\end{eqnarray}
+
+\noindent where $u$ and $v$ are the amplitudes. By substituting these assumed solutions into our equations of motion we find they obey a matrix equation which is solved by ensuring that the determinant of the matrix is zero. This results in the corresponding dispersion for the spin waves:
+
+\begin{equation}
+    \hbar \omega = 4JS[1 - \cos(ka)] \approx 2JSa^2k^2
+    \label{SpinWavesDispersionRelation}
+\end{equation}
+
+\noindent where we have assumed that the wavelengths of these spin waves are very long such that $ka \ll 1$. We also find that our assumed solutions, Eq~\ref{AssumedSpinWaveSolution1} and Eq~\ref{AssumedSpinWaveSolution2} are out of phase with each other by $\frac{\pi}{2}$, i.e $v = -iu$, which means:
+
+\begin{eqnarray}
+    S_p^x = u\cos(pka - \omega t) \\.
+    S_p^y = v\sin(pka - \omega t)
+\end{eqnarray}
+
+\noindent This is very similar to phonons except there dispersion relationship is linear in $k$ whereas for spin waves it is quadratic.
+
+
+If instead the previous calculation was performed using quantum mechanics we would find that the dispersion relationship has the same form but now the energy of such modes is quantised according to:
+
+\begin{equation}
+    E_k = (n_k + \frac{1}{2}) \hbar \omega_k
+    \label{QuantisedModeSpinWave}
+\end{equation}
+
+\noindent The quanta associated with these spin waves are known as magnons. They correspond to flipping the spin of an electron so the magnetisation decreases by $g\mu_B$ and must be bosons since they flip the spin of an electron from $+\frac{1}{2}$ to $-\frac{1}{2}$ meaning they possess spin 1. This means they obey the Bose-Einstein statistics:
+
+\begin{equation}
+    n(\omega) = \frac{1}{e^{\frac{\hbar \omega}{k_B T}} - 1}
+    \label{BoseEinsteinStatistics}
+\end{equation}
+
+\noindent In order to determine the number of magnons in a system at temperature $T$, to find out how the magnetisation varies with temperature, we need the density of states of electrons within the material
+
+\begin{equation}
+    g(k) dk = \frac{Vk^2}{2\pi^2} dk \propto k^2 dk
+    \label{kDependenceDOS}
+\end{equation}
+
+\noindent and since, according to Eq~\ref{SpinWavesDispersionRelation}, $\omega \propto k^2$:
+
+\begin{equation}
+    g(\omega) d \omega \propto \sqrt{\omega} d\omega
+    \label{omegaDependenceDOS}
+\end{equation}
+
+\noindent This means we find the number of magnons as:
+
+\begin{equation}
+    N = \int^\infty_0 \frac{g(\omega)}{n(\omega)} d\omega = (\frac{k_B T}{\hbar})^{\frac{3}{2}} \int^\infty_0 \frac{\sqrt{x}}{e^x - 1} dx \sim T^{\frac{3}{2}}
+    \label{NumberMagnons}
+\end{equation}
+
+\noindent where $x = \frac{\hbar \omega}{k_B T}$ and there are some shenanigans going on. From this we can determine Bloch's law:
+
+\begin{equation}
+    \frac{M(0) - M(T)}{M(0)} \sim T^{\frac{3}{2}}
+    \label{Bloch3/2Law}
+\end{equation}
+
+\noindent which is only valid for small temperatures since we have assumed that $ka \\l 1$, which means that only low energy (large wavelength) magnon excitations are allowed.
+
+\noindent This result is seen experimentally at low temperatures:
+
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\noindent This behaviour is not seen in the Ising model, since the spins are constrained to the easy axis (i.e can only point up or down), whilst the spin wave theory we have developed was formulated from the Heisenberg Hamiltonian.
+
+%which says that the number of magnons in a system at a low temperature (low energy excitations leads to large wavelength spin waves) scales as $T^{\frac{3}{2}}$
+
+
+
